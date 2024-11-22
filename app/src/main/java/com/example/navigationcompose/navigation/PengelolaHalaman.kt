@@ -21,7 +21,7 @@ enum class Halaman {
     Splash,
     Mahasiswa,
     MataKuliah,
-    Tampil
+    TampilKRS
 }
 
 @Composable
@@ -61,8 +61,20 @@ fun MahasiswaApp(
                 mahasiswa = mahasiswaUiState,
                 onSubmitButtonClicked = {krsViewModel.saveDataKRS(it)},
                 onBackButtonClicked = {navController.popBackStack()}
-                )
-            }
+            )
+        }
+        composable(route = Halaman.TampilKrs.name) {
+            TampilView(
+                mahasiswa = mahasiswaUiState,
+                krs = rencanaStudiUiState,
+                onbackbuttonClicked = {
+                    navController.popBackStack()
+                },
+                onResetButtonClicked = {
+                    navController.navigate(Halaman.Splash.name)
+                }
+
+            )
         }
     }
 }

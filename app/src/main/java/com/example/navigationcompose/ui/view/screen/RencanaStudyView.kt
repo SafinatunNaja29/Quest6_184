@@ -110,11 +110,15 @@ fun RencanaStudyView(
                     .fillMaxSize()
                     .padding(16.dp)
             ) {
-                Text(text = "Pilih Mata Kuliah Peminatan", fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Pilih Mata Kuliah Peminatan",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black)
                 Text(
                     text = "Silahkan pilih mata kuliah yang anda inginkan",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -128,11 +132,15 @@ fun RencanaStudyView(
                 Spacer(modifier = Modifier.padding(8.dp))
                 HorizontalDivider()
                 Spacer(modifier = Modifier.padding(8.dp))
-                Text(text = "Pilih Kelas Belajar", fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Pilih Kelas Belajar",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black)
                 Text(
                     text = "Silahkan pilih kelas dari mata kuliah yang anda inginkan",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.Black
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
                 Row(
@@ -152,7 +160,9 @@ fun RencanaStudyView(
                 Spacer(modifier = Modifier.padding(8.dp))
                 HorizontalDivider()
                 Spacer(modifier = Modifier.padding(8.dp))
-                Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
+                Text(text = "Klausul Persetujuan Mahasiswa",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black)
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(
                         checked = checked,
@@ -161,7 +171,9 @@ fun RencanaStudyView(
                     )
                     Text(
                         text = "Saya menyetujui setiap pernyataan yang ada tanpa paksaan dari pohak manapun.",
-                        fontWeight = FontWeight.Light, fontSize = 10.sp
+                        fontWeight = FontWeight.Light,
+                        fontSize = 10.sp,
+                        color = Color.Black
                     )
                 }
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -170,10 +182,10 @@ fun RencanaStudyView(
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Button(onClick = { onBackButtonClicked() }) {
-                        Text(text = "Kembali")
+                        Text(text = "Kembali", color = Color.Black)
                     }
                     Button(onClick = { onSubmitButtonClicked(listData) }, enabled = checked) {
-                        Text(text = "Lanjut")
+                        Text(text = "Lanjut", color = Color.Black)
                     }
                 }
             }

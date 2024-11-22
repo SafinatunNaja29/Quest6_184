@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -55,7 +56,7 @@ fun MahasiswaFormView(
         )
     ) {
         Row (modifier = Modifier
-            .padding(38.dp),
+            .padding(25.dp),
             verticalAlignment = Alignment.CenterVertically
         ){
             Image(
@@ -64,19 +65,19 @@ fun MahasiswaFormView(
                 ), contentDescription = ""
             )
 
-            Spacer(modifier = Modifier.padding(start = 18.dp))
+            Spacer(modifier = Modifier.padding(start = 15.dp))
 
             Column{
                 Text(
                     text = "Universitas Muhammadiyah Yogyakarta",
-                    color = Color.Red,
+                    color = Color.White,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
 
                 )
                 Text(
                     text = "Unggul dan Islami",
-                    color = Color.Red,
+                    color = Color.White,
                     fontWeight = FontWeight.Light
 
                 )
@@ -102,11 +103,13 @@ fun MahasiswaFormView(
                 Text(
                     text = "Masukkan Data Anda",
                     fontWeight = FontWeight.Bold,
+                    color = Color.Black,
                     fontSize = 19.sp
                 )
                 Text(
                     text = "Isi sesuai data yang anda daftarkan",
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -116,13 +119,13 @@ fun MahasiswaFormView(
                     shape = RoundedCornerShape(50.dp),
                     value = nim,
                     onValueChange = {nim = it},
-                    label = { Text(text = "Nomor Induk Mahasiswa") },
+                    label = { Text(text = "Nomor Induk Mahasiswa", color = Color.Black) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Info,
                             contentDescription = ""
                         )
-                    }
+                    }, textStyle = TextStyle(color = Color.Black)
                 )
 
                 Spacer(modifier = Modifier.padding(5.dp))
@@ -132,13 +135,13 @@ fun MahasiswaFormView(
                     shape = RoundedCornerShape(50.dp),
                     value = nama,
                     onValueChange = {nama = it},
-                    label = { Text(text = "Masukkan Nama Anda") },
+                    label = { Text(text = "Masukkan Nama Anda", color = Color.Black) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Person,
                             contentDescription = ""
                         )
-                    }
+                    }, textStyle = TextStyle(color = Color.Black)
                 )
 
                 Spacer(modifier = Modifier.padding(5.dp))
@@ -148,13 +151,13 @@ fun MahasiswaFormView(
                     shape = RoundedCornerShape(50.dp),
                     value = email,
                     onValueChange = {email = it},
-                    label = { Text(text = "Masukkan Email Anda") },
+                    label = { Text(text = "Masukkan Email Anda", color = Color.Black) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Email,
                             contentDescription = ""
                         )
-                    }
+                    }, textStyle = TextStyle(color = Color.Black)
                 )
 
                 Spacer(modifier = Modifier.padding(10.dp))
@@ -165,10 +168,10 @@ fun MahasiswaFormView(
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Button(onClick = {onBackButtonClicked()}) {
-                        Text(text = "Kembali")
+                        Text(text = "Kembali", color = Color.Black)
                     }
                     Button(onClick = {onSubmitButtonClicked(listData)}) {
-                        Text(text = "Simpan")
+                        Text(text = "Simpan", color = Color.Black)
                     }
                 }
             }
