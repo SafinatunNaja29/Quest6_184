@@ -3,6 +3,7 @@ package com.example.navigationcompose.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.compose.composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -14,6 +15,7 @@ import com.example.navigationcompose.model.Mahasiswa
 import com.example.navigationcompose.ui.view.screen.MahasiswaFormView
 import com.example.navigationcompose.ui.view.screen.RencanaStudyView
 import com.example.navigationcompose.ui.view.screen.SplashView
+import com.example.navigationcompose.ui.view.screen.TampilView
 import com.example.navigationcompose.ui.view.viewmodel.MahasiswaViewModel
 import com.example.navigationcompose.ui.view.viewmodel.RencanaStudyViewModel
 
@@ -28,10 +30,12 @@ enum class Halaman {
 fun MahasiswaApp(
     modifier: Modifier = Modifier,
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),
-    krsViewModel: RencanaStudyViewModel = viewModel(),
+    RencanaStudyViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
     val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
+    val rencanaStudiUiState = RencanaStudyViewModel.krsStateUi.collectAsState().value
+
 
     NavHost(
         navController = navController,
@@ -59,11 +63,13 @@ fun MahasiswaApp(
         composable (route = Halaman.MataKuliah.name){
             RencanaStudyView(
                 mahasiswa = mahasiswaUiState,
-                onSubmitButtonClicked = {krsViewModel.saveDataKRS(it)},
+                onSubmitButtonClicked = {
+                    RencanaStudyViewModel.saveDataKRS(it)
+                navController.navigate(Halaman.TampilKRS.name)},
                 onBackButtonClicked = {navController.popBackStack()}
             )
         }
-        composable(route = Halaman.TampilKrs.name) {
+        composable(route = Halaman.TampilKRS.name) {
             TampilView(
                 mahasiswa = mahasiswaUiState,
                 krs = rencanaStudiUiState,

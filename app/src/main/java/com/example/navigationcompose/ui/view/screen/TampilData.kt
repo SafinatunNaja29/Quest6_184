@@ -18,18 +18,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.navigationcompose.R
 import com.example.navigationcompose.model.Mahasiswa
 import com.example.navigationcompose.model.RencanaStudi
+
 @Composable
 fun TampilView(
     mahasiswa: Mahasiswa,
     krs: RencanaStudi,
     onbackbuttonClicked: () -> Unit,
-    onResetButtonClicked: () -> Unit,
+    onResetButtonClicked: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -110,25 +112,25 @@ fun TampilView(
                     Column {
                         Text(
                             text = "Nim:",
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontWeight = FontWeight.Bold,
                             fontSize = 14.sp,
                             color = Color.Black
                         )
                         Text(
                             text = mahasiswa.nim,
-                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontStyle = FontStyle.Italic,
                             fontSize = 14.sp,
                             color = Color.Black
                         )
                         Text(
                             text = "Nama:",
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontWeight = FontWeight.Bold,
                             fontSize = 14.sp,
                             color = Color.Black
                         )
                         Text(
                             text = mahasiswa.nama,
-                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontStyle = FontStyle.Italic,
                             fontSize = 14.sp,
                             color = Color.Black
                         )
@@ -137,12 +139,12 @@ fun TampilView(
                         Text(
                             text = "Email:",
                             color = Color.Black,
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontWeight = FontWeight.Bold,
                             fontSize = 14.sp
                         )
                         Text(
                             text = mahasiswa.email,
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontWeight = FontWeight.Bold,
                             fontSize = 14.sp,
                             color = Color.Black
                         )
@@ -154,13 +156,13 @@ fun TampilView(
                 ) {
                     Text(
                         text = "Matakuliah yang diambil:",
-                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                        fontWeight = FontWeight.Bold,
                         fontSize = 14.sp,
                         color = Color.Black
                     )
                     Text(
                         text = krs.namaMK,
-                        fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                        fontStyle = FontStyle.Italic,
                         fontSize = 14.sp,
                         color = Color.Black
                     )
@@ -168,14 +170,14 @@ fun TampilView(
                     Row {
                         Text(
                             text = "Kelas:",
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontWeight = FontWeight.Bold,
                             fontSize = 14.sp,
                             color = Color.Black
 
                         )
                         Text(
                             text = krs.kelas,
-                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontStyle = FontStyle.Italic,
                             fontSize = 14.sp,
                             color = Color.Black
                         )
