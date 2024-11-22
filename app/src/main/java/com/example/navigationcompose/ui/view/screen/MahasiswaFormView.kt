@@ -35,11 +35,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.navigationcompose.R
 
-@Preview(showBackground = true)
 @Composable
 fun MahasiswaFormView(
-    onSubmitButton: (MutableList<String>) -> Unit,
-    onBackButton:
+    onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onBackButtonClicked: () -> Unit
 ){
 
     var nim by remember { mutableStateOf("") }
@@ -50,7 +49,9 @@ fun MahasiswaFormView(
     Column(modifier = Modifier
         .fillMaxSize()
         .background(
-            color = colorResource(id = R.color.primary)
+            color = colorResource(
+                id = R.color.primary
+            )
         )
     ) {
         Row (modifier = Modifier
@@ -163,10 +164,10 @@ fun MahasiswaFormView(
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    Button(onClick = {onBackButton}) {
+                    Button(onClick = {onBackButtonClicked()}) {
                         Text(text = "Kembali")
                     }
-                    Button(onClick = {}) {
+                    Button(onClick = {onSubmitButtonClicked(listData)}) {
                         Text(text = "Simpan")
                     }
                 }
