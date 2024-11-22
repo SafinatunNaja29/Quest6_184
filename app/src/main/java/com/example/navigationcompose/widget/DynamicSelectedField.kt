@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import kotlin.math.exp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,7 +46,9 @@ fun DynamicSelectTextField(
         )
 
         ExposedDropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false }) {
 
-        ) { }
+            }
     }
 }
