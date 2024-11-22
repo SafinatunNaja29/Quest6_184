@@ -29,7 +29,13 @@ fun DynamicSelectTextField(
         modifier = modifier
     ) {
         OutlinedTextField(
-
+            readOnly = true,
+            value = selectedValue,
+            onValueChange = {},
+            label = { Text(text = label) },
+            trailingIcon = {
+                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
+            },
 
         )
     }
