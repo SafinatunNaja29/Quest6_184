@@ -27,6 +27,10 @@ fun DynamicSelectTextField(
         expanded = expanded,
         onExpandedChange = {expanded = !expanded},
         modifier = modifier
-    ){
+    ) {
+        OutlinedTextField(
+
+
+        )
     }
 }
